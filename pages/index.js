@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import CommonMeta from '../components/commonMeta/meta'
+import CommonMeta from '../components/commonMeta/Meta'
 
 export default function Home() {
 
