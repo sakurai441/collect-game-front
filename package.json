@@ -1,0 +1,52 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next -p 8000",
+    "build": "next build",
+    "start": "next start -p 8000",
+    "built-dev": "set TAILWIND_MODE=watch&&postcss styles.css -o dist.css -w",
+    "built": "set NODE_ENV=production&&postcss styles.css -o dist.css",
+    "lint": "next lint",
+    "fix:lint": "next lint --fix",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^5.0.0-beta.5",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.0.3",
+    "axios": "^0.23.0",
+    "cssnano": "^5.0.8",
+    "dayjs": "^1.10.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tailwindcss": "^3.4.3",
+    "firebase": "^9.0.2",
+    "next": "latest",
+    "npm": "^7.22.0",
+    "npm-check-updates": "^12.5.8",
+    "postcss": "^8.4.7",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-timer-hook": "^3.0.5",
+    "swr": "^1.2.2",
+    "use-state-if-mounted": "^1.0.4"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.11.3",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/testing-library__jest-dom": "^5.14.2",
+    "autoprefixer": "^10.4.2",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-testing-library": "^5.0.5",
+    "jest": "^27.4.7",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.14"
+  }
+}
