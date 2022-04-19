@@ -5,7 +5,8 @@ import { useEffect } from 'react'
 
 import auth from '../lib/firebase'
 
-axios.defaults.baseURL = 'http://localhost:3000/api/v1'
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_DOMAIN
+// axios.defaults.baseURL = 'http://localhost:3000/api/v1'
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
