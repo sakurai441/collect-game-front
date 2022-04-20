@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 import auth from '../lib/firebase'
 
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_DOMAIN
+axios.defaults.baseURL = process.env.NODE_ENV === "production" ? process.env.NEXT_PUBLIC_API_DOMAIN : process.env.NEXT_PUBLIC_API_BASE_URL
 // axios.defaults.baseURL = 'http://localhost:3000/api/v1'
 
 export default function MyApp({ Component, pageProps }) {
