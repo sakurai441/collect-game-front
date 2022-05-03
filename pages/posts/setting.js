@@ -30,7 +30,7 @@ export default function Setting(id) {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         const token = await auth.currentUser.getIdToken(false)
-        // if (name === 'ゲストユーザー') return alert('ゲストユーザーにはなれないよ。')
+        if (name === 'ゲストユーザー') return alert('ゲストユーザーにはなれないよ。')
         if (user.email === process.env.NEXT_PUBLIC_GUEST_EMAIL)
           return alert('ゲストユーザーなので名前が変えることができないみたい。')
         try {
