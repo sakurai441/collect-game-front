@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </main>
       <div className="visible md:invisible">
-        <div className="flex flex-col pt-72 text-3xl tracking-wide text-center text-white">
+        <div className="flex flex-col pt-44 text-3xl tracking-wide text-center text-white">
           {data.map(([name, path]) => (
             <Link href={path} key={name}>
               <a className="visible mt-7 md:invisible">{name}</a>

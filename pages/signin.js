@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useCallback } from 'react'
 import { useStateIfMounted } from 'use-state-if-mounted'
 import { TextInput, PrimaryButton } from '../components/UIkit'
+import ResHeader from '../components/header/RespHeader'
 import auth from '../lib/firebase'
 
 export default function SignIn() {
@@ -42,8 +43,11 @@ export default function SignIn() {
   return (
     <div className="h-screen lg:flex">
       <div className=" lg:w-1/4 ">
-        <div className="mt-56 text-center">
-          <h1 className="mb-6 text-3xl font-bold">サインイン</h1>
+        <div className='pt-12'>
+          <ResHeader/>
+        </div>
+        <div className="mt-10 text-center md:mt-56">
+          <h1 className="mb-6 text-2xl font-bold lg:text-3xl ">サインイン</h1>
         </div>
         <div>
           <TextInput id={'email'} label={'Email'} type={'email'} onChange={inputEmail} />
@@ -54,10 +58,10 @@ export default function SignIn() {
         </div>
         <div className="mt-12 text-sm font-bold text-center text-gray-700">
           <div className="mb-2">
-            <p className="text-2xl">アカウントを持っていませんか?</p>
+            <p className="text-base text-red-600 lg:text-lg">アカウントを持っていませんか?</p>
           </div>
           <Link href="/signup">
-            <a className="text-lg hover:underline cursor-pointer">アカウントを作成するよ</a>
+            <a className="text-2xl hover:underline cursor-pointer">アカウントを作成するよ→</a>
           </Link>
         </div>
       </div>

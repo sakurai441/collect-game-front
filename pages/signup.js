@@ -3,9 +3,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useCallback } from 'react'
 import { useStateIfMounted } from 'use-state-if-mounted'
-
-
 import { MiniTextInput, MiniPrimaryButton } from '../components/UIkit'
+import ResHeader from '../components/header/RespHeader'
+
+
 import auth from '../lib/firebase'
 
 export default function SignUp() {
@@ -75,8 +76,9 @@ export default function SignUp() {
         <p className="invisible text-3xl font-bold text-center lg:visible lg:mt-10">睡眠を削るしかないのか？</p>
       </div>
       <div className="lg:w-3/4">
-        <div className="mt-56 text-center">
-          <h1 className="mb-6 text-3xl font-bold">アカウントを作成する</h1>
+        <ResHeader/>
+        <div className="mt-10 text-center md:mt-56">
+          <h1 className="mb-6 text-xl font-bold lg:text-3xl">アカウントを作成する</h1>
         </div>
         <MiniTextInput id={'email'} label={'Email'} type={'email'} onChange={inputEmail} />
         <MiniTextInput id={'password'} label={'Password'} type={'password'} onChange={inputPassword} />
@@ -92,10 +94,10 @@ export default function SignUp() {
         <div className="mt-12 text-sm font-semibold text-center text-gray-700">
           <div className=" flex flex-col">
             <Link href="/signin">
-              <a className="text-2xl font-bold hover:underline cursor-pointer">すでにアカウントをお持ちですか？</a>
+              <a className="text-xl font-bold text-red-600 hover:underline cursor-pointer lg:text-2xl lg:text-black">すでにアカウントをお持ちですか？</a>
             </Link>
             <Link href="/about">
-              <a className="mt-3 text-2xl font-bold hover:underline cursor-pointer">どんなアプリなの？</a>
+              <a className="pb-32 mt-3 text-xl font-bold hover:underline cursor-pointer lg:text-2xl">どんなアプリなの？</a>
             </Link>
           </div>
         </div>
