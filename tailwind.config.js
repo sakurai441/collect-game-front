@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        fantasy: 'fantasy',
+        fantasy: 'fantasy'
       },
       backgroundImage: (theme) => ({
         homepage: 'url(/images/homepage.png)',
