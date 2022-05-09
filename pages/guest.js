@@ -2,10 +2,10 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import { setPersistence, browserSessionPersistence } from 'firebase/auth'
 
 import { MiniPrimaryButton } from '../components/UIkit'
 import auth from '../lib/firebase'
-
 
 export default function Guest() {
   const router = useRouter()
@@ -30,15 +30,20 @@ export default function Guest() {
     })
   }, [])
 
-
   const guestLogin = () => {
-    auth.signInWithEmailAndPassword(process.env.NEXT_PUBLIC_GUEST_EMAIL, process.env.NEXT_PUBLIC_GUEST_PASSWORD)
+    setPersistence(auth, browserSessionPersistence).then(() => {
+      return auth.signInWithEmailAndPassword(
+        process.env.NEXT_PUBLIC_GUEST_EMAIL,
+        process.env.NEXT_PUBLIC_GUEST_PASSWORD
+      )
+    })
     try {
       setTimeout(destroyAll, 5000)
-    } catch(e) {
-      console.log(e);
+    } catch (e) {
+      console.log(e)
     }
   }
+
 
   return (
     <div className="h-screen text-center">
