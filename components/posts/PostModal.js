@@ -1,4 +1,5 @@
 import { Modal } from '@material-ui/core'
+import { useRouter } from 'next/router'
 
 import axios from 'axios'
 import dayjs from 'dayjs'
@@ -24,6 +25,9 @@ const PostModal = (props) => {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const post = useContext(postContext)
+
+  const router = useRouter()
+
 
   const inputTitle = useCallback(
     (e) => {
